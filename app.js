@@ -4,16 +4,20 @@ var msec = 0;
 
 var timer = false;
 
-function play() {
+function play(event) {
     if (!timer) {
-        play.innerHTML = 'Pause';
-        timer = true;
+        event.innerHTML = 'Pause'
+        timer = true
     } else {
-        play.innerHTML = `Play`;
+        event.innerHTML = `Play`;
         timer = false;
     }
     myFunc();
 }
+
+// function play(event){
+// event.innerHTML='Pause'
+// }
 
 function reset() {
     location.reload();
@@ -31,19 +35,25 @@ function myFunc() {
             sec = 0;
         }
 
+        var getMsec = msec
         var getSec = sec;
         var getMin = min;
+
+        if (msec < 10) {
+            getMsec = "0" + msec;
+        }
 
         if (sec < 10) {
             getSec = "0" + sec;
         }
+
         if (min < 10) {
             getMin = "0" + min;
         }
 
         setTimeout("myFunc()", 10)
 
-        document.getElementById("msec").innerHTML = msec;
+        document.getElementById("msec").innerHTML = getMsec;
         document.getElementById("sec").innerHTML = getSec;
         document.getElementById("min").innerHTML = getMin;
     }
