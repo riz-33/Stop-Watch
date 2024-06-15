@@ -5,11 +5,17 @@ var msec = 0;
 var timer = false;
 
 function play() {
-    timer = true;
+    if (!timer) {
+        play.innerHTML = 'Pause';
+        timer = true;
+    } else {
+        play.innerHTML = `Play`;
+        timer = false;
+    }
     myFunc();
 }
 
-function reset(){
+function reset() {
     location.reload();
 }
 
@@ -28,17 +34,17 @@ function myFunc() {
         var getSec = sec;
         var getMin = min;
 
-        if (sec < 10){
-            getSec = "0"+sec;
+        if (sec < 10) {
+            getSec = "0" + sec;
         }
-        if (min < 10){
-            getMin = "0"+min;
+        if (min < 10) {
+            getMin = "0" + min;
         }
 
-        setTimeout ("myFunc()",10)
+        setTimeout("myFunc()", 10)
 
-        document.getElementById ("msec").innerHTML= msec;
-        document.getElementById ("sec").innerHTML=getSec;
-        document.getElementById ("min").innerHTML=getMin;
+        document.getElementById("msec").innerHTML = msec;
+        document.getElementById("sec").innerHTML = getSec;
+        document.getElementById("min").innerHTML = getMin;
     }
 }
