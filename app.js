@@ -15,10 +15,6 @@ function play(event) {
     myFunc();
 }
 
-// function play(event){
-// event.innerHTML='Pause'
-// }
-
 function reset() {
     location.reload();
 }
@@ -58,3 +54,18 @@ function myFunc() {
         document.getElementById("min").innerHTML = getMin;
     }
 }
+
+function lap() {
+    var laps = document.getElementById("laps");
+    laps.innerText += `
+    <div>
+        <ul class="laps">
+        <li class="lap-item">
+        <span class="number">#1</span>
+        <span class="timestamp">${getMin}</span>
+        </li>
+        </ul> </div>
+        `
+}
+
+lap();
