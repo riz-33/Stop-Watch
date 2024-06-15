@@ -13,15 +13,17 @@
         <div class="watch">
             <div class="outer-circle">
                 <div class="inner-circle">
-                    <span class="text min">01 :</span>
-                    <span class="text sec">&nbsp;47 :</span>
-                    <span class="text msec">&nbsp;97</span>
+                    <span id="min" class="text min">00</span>
+                    <span class="text min">&nbsp;:&nbsp;</span>
+                    <span id="sec" class="text sec">00</span>
+                    <span class="text sec">&nbsp;:&nbsp;</span>
+                    <span id="msec" class="text msec">00</span>
                 </div>
             </div>
             <div class="button-wrapper">
-                <button class="button">Reset</button>
-                <button class="button">Play</button>
-                <button class="button">Lap</button>
+                <button onclick="reset()" class="button">Reset</button>
+                <button onclick="play()" class="button">Play</button>
+                <button onclick="lap()" class="button">Lap</button>
             </div>
         </div>
         <ul class="laps">
@@ -48,6 +50,8 @@
             <button class="clear">Clear All</button>
         </ul>
     </div>
+
+    <script src="app.js"></script>
 </body>
 
 </html>
