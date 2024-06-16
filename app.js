@@ -4,13 +4,24 @@ var msec = 0;
 
 var timer = false;
 
-function play(event) {
+function play() {
     if (!timer) {
-        event.innerHTML = 'Pause'
+        // event.innerHTML = 'Pause'
         timer = true
     } else {
-        event.innerHTML = `Play`;
+        // event.innerHTML = `Play`;
         timer = false;
+    }
+    myFunc();
+}
+
+function pause() {
+    if (timer) {
+        // event.innerHTML = 'Pause'
+        timer = false
+    } else {
+        // event.innerHTML = `Play`;
+        timer = true;
     }
     myFunc();
 }
@@ -52,20 +63,20 @@ function myFunc() {
         document.getElementById("msec").innerHTML = getMsec;
         document.getElementById("sec").innerHTML = getSec;
         document.getElementById("min").innerHTML = getMin;
+        document.getElementById("laps").innerHTML = "";
     }
 }
 
-function lap() {
-    var laps = document.getElementById("laps");
-    laps.innerText += `
-    <div>
-        <ul class="laps">
-        <li class="lap-item">
-        <span class="number">#1</span>
-        <span class="timestamp">${getMin}</span>
-        </li>
-        </ul> </div>
-        `
-}
+// function lap() {
+//     var li = document.createElement("li");
+//     laps.innerHTML = getMin + getSec + getMsec;
+//     laps.appendChild(li);
+// }
 
-lap();
+
+// function lap() {
+//     lapNow = min + " : " + sec + " : " + msec;
+//     document.getElementById('laps').innerHTML += "<li>" + lapNow + "</li>"
+// }
+
+

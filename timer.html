@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="watch">
+            <div class="outer-circle">
+                <div class="inner-circle">
+                    <span id="min" class="text min">00</span>
+                    <span class="text msec">&nbsp;m&nbsp;</span>
+                    <span id="sec" class="text sec">00</span>
+                    <span class="text msec">&nbsp;s&nbsp;</span>
+                    <!-- <span id="msec" class="text msec">00</span> -->
+                </div>
+            </div>
+            <div class="button-wrapper">
+                <button onclick="reset()" class="button">Reset</button>
+                <button onclick="play()" id="play" class="button">Play</button>
+                <button onclick="pause()" class="button">Pause</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
